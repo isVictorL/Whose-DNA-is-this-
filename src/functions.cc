@@ -1,12 +1,12 @@
 #include "functions.hpp"
-#include "utilities.hpp"
+#include "substring.hpp"
 #include <vector>
 #include <string>
 using  namespace std;
 #include "functions.hpp"
 #include <iostream>
 
-void Helperthree(map<string, vector<int>> map,
+void Helperthree(map<string, vector<int> > map,
                      vector<string> victor,
                       string s){
   (void)map;

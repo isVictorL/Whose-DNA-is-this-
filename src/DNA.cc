@@ -7,7 +7,7 @@
 #include <string>
 #include <iostream>
 #include "functions.hpp"
-#include "utilities.hpp"
+#include "substring.hpp"
 using namespace std;
 
 int main(int argc, char* argv[]) {
@@ -17,12 +17,12 @@ int main(int argc, char* argv[]) {
     return 1;
   }
   const int kX = 0, kY = 1;
-  ifstream csvfile{argv[1]};
+  ifstream csvfile {argv[1]};
   map<string, vector<int>> map;
   vector<string> victor;
   int intwhich = kY;
   for (string s; getline(csvfile, s); s = "") {
-    vector<string> vos = utilities::GetSubstrs(s, ',');
+    vector<string> vos = substrings::GetSubstring(s, ',');
     switch (intwhich)
     {
     case 1: victor = vos;break;
@@ -40,10 +40,6 @@ int main(int argc, char* argv[]) {
   return kX;
 }
 
-
-// string Sorter(vector<string> victor, string s){
-//   vector<string> victorofstring = utilities::GetSubstrs(s, ',');
-// }
 string Nomatch(){
     return "No match";
 }
@@ -51,7 +47,7 @@ int Interone(int num, vector<string> victor, string s){
     int twostringone = TwoString(s, Helperforvos(victor,num));
     return twostringone;
 }
-string MapVectorString( map<string, vector<int>> map,
+string MapVectorString( map<string, vector<int> > map,
                      vector<string> victor,
                       string s) {
   string newstring;
